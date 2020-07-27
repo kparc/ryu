@@ -1,0 +1,7 @@
+**/*.o
+**/*.os
+*.dblite
+*.a
+*.so
+*.so.*
+run_tests

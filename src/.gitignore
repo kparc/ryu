@@ -1,0 +1,5 @@
+bench_*
+*.o
+*.a
+*.so
+tests/*.test

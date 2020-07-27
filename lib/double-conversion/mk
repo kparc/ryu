@@ -1,0 +1,18 @@
+#!/bin/sh
+
+Q="-s -Q"
+C=`cat /proc/cpuinfo | grep processor | wc -l`
+JOBS="-j$C"
+
+echo "cleaning up double-conversion..."
+scons $Q -c
+scons $JOBS --no-cache CC=$CC CXX=$CXX CFLAGS="$CFLAGS" optimize=1
+
+echo
+echo "running double-converison tests..."
+echo
+./run_tests --list | tr -d '<' | xargs ./run_tests
+
+echo
+
+#:~
